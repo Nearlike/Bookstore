@@ -9,13 +9,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class BookshopApplication implements ApplicationRunner {
 	@Autowired
-	DVDService dvdService;
+	PriceCalculatorService priceCalculatorService;
 	public static void main(String[] args) {
 		SpringApplication.run(BookshopApplication.class, args);
 	}
 
 	@Override
 	public void run(ApplicationArguments args) {
-		dvdService.listDVDFromFile("cart.txt");
+		priceCalculatorService.price("cart.txt");
 	}
 }
