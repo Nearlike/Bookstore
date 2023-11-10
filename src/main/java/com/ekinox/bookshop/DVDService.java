@@ -28,9 +28,9 @@ public class DVDService {
             while(scanner.hasNextLine()){
                 String nextLine = scanner.nextLine();
                 if(nextLine.trim().toLowerCase().startsWith("back to the future")) {
-                    dvdList.add(new DVD(nextLine, 15));
+                    dvdList.add(new DVD(nextLine, 15, true));
                 } else {
-                    dvdList.add(new DVD(nextLine, 20));
+                    dvdList.add(new DVD(nextLine, 20, false));
                 }
             }
         } catch (FileNotFoundException e) {
@@ -38,7 +38,6 @@ public class DVDService {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        System.out.println(dvdList);
         return dvdList;
     }
 }

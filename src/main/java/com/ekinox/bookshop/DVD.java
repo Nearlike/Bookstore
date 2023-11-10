@@ -5,9 +5,12 @@ public class DVD {
 
     private int price;
 
-    public DVD(String name, int price) {
+    private boolean discount;
+
+    public DVD(String name, int price, boolean discount) {
         this.name = name;
         this.price = price;
+        this.discount = discount;
     }
 
     public String getName() {
@@ -26,11 +29,20 @@ public class DVD {
         this.price = price;
     }
 
+    public boolean isDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(boolean discount) {
+        this.discount = discount;
+    }
+
     @Override
     public String toString() {
         return "DVD{" +
                 "name='" + name + '\'' +
                 ", price=" + price +
+                ", discount=" + discount +
                 '}';
     }
 }
